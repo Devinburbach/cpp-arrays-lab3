@@ -20,19 +20,37 @@ using namespace std;
 
 int main()
 {
-	const int SIZE = 5;
-	int arr[SIZE];
+	int min = 0;
+	int max = 0;
 
-	for (int i = 0; i < SIZE; i++)
+	int count;
+	cout << "enter amount of numbers: ";
+	cin >> count;
+	int *nums = new int[count];
+	
+	for (int i = 0; i < count; i++)
 	{
-		cout << "enter number " << i + 1 << ": ";
-		cin >> arr[i];
+		cout << "enter a number: ";
+		cin >> nums[i];
 	}
 
-	for (int i = 4; i == 0; i--)
+	min = nums[0];
+	max = nums[0];
+
+	for (int i = count - 1; i >= 0; i--)
 	{
-		cout << arr[i] << endl;
+		cout << nums[i] << " ";
+		
+		if (nums[i] < min) {
+			min = nums[i];
+		}
+		if (nums[i] > max) {
+			max = nums[i];
+		}
 	}
+	cout << endl;
+	cout << "min is " << min << endl;
+	cout << "max is " << max << endl;
 
 	_getch();
 	return 0;
